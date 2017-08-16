@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
-@ContextConfiguration(locations = { "classpath:classes/spring-mybatis.xml" })
+@ContextConfiguration(locations = { "classpath:spring-mybatis.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
 public abstract class SpringTestCase extends AbstractJUnit4SpringContextTests {
 	protected Logger logger = LoggerFactory.getLogger(getClass());
