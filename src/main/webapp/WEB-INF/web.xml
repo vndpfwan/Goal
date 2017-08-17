@@ -21,13 +21,13 @@
 	</error-page>
 	<!-- spring mvc config -->
 	<servlet>
-		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-name>spring-mvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
   
 	<servlet-mapping>
-		<servlet-name>mvc-dispatcher</servlet-name>
+		<servlet-name>spring-mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
   
@@ -36,25 +36,23 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/classes/spring-mybatis.xml,
-			/WEB-INF/classes/spring-mvc.xml
+			/WEB-INF/spring-mvc-servlet.xml,
 		</param-value>
 	</context-param>
   
 	<!-- spring listener -->
-<!--
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
--->
+
     <!-- config for log back -->
-<!--
 	<listener>  
 		<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>  
 	</listener>  
--->
+
 	<context-param>  
 	    <param-name>logbackConfigLocation</param-name>  
-	    <param-value>classpath:logback.xml</param-value>  
+	    <param-value>classpath:/classes/logback.xml</param-value>  
 	</context-param>  
 	
 	<!-- encode filter -->  
