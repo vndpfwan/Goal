@@ -1,9 +1,17 @@
 package com.goal.po;
 
+/**
+ * user bean for test
+ * @author lizhiwei
+ *
+ */
 public class User {
 	private Integer userId;
+	
 	private String userName;
+	
 	private String userPassword;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -26,4 +34,15 @@ public class User {
 	public String toString(){
 		return "User [userId="+userId+",userName="+userName+",userPassword="+userPassword+"]";
 	}
+	
+	public User() {
+	}
+	public User(Integer userId, String userName, String userPassword) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userPassword = userPassword;
+	}
+	
+	
 }

@@ -29,12 +29,32 @@
             </list>
         </property>
     </bean>
-    <!-- 定义跳转的文件的前后缀 ，视图模式配置-自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址-->
+    <!-- 定义跳转的文件的前后缀 ，视图模式配置-自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
           
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
-    </bean>
-
-
+    </bean>-->
+    <!-- 拦截器配置 -->
+	<mvc:interceptors>
+		<bean class="com.goal.interceptor.GenericInterceptor"></bean>
+	</mvc:interceptors>
+	
+	<!-- 使用thymeleaf解析 -->  
+   <bean id="templateResolver"  
+         class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">  
+     <property name="prefix" value="/WEB-INF/html/" />  
+     <property name="suffix" value=".html" />  
+     <property name="templateMode" value="HTML5" />  
+     <property name="cacheable" value="false" />  
+   </bean>  
+       
+   <bean id="templateEngine"  
+         class="org.thymeleaf.spring4.SpringTemplateEngine">  
+     <property name="templateResolver" ref="templateResolver" />  
+   </bean>  
+   
+   <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">  
+    <property name="templateEngine" ref="templateEngine" />  
+   </bean>  
 </beans>

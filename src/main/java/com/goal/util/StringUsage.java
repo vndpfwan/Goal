@@ -17,7 +17,7 @@ public class StringUsage {
 		String tem1 = null;
 		System.out.println(StringUtils.isEmpty(tem1));
 		
-		//去空�?
+		//去空
 		String tem2 = " hello you! ";
 		System.out.println(StringUtils.trim(tem2));
 		
@@ -25,7 +25,7 @@ public class StringUsage {
 		String tem3 = "i think you are a good man!";
 		System.out.println(StringUtils.abbreviate(tem3, 7));
 		
-		//首字母大�?
+		//首字母大写
 		String tem4 = "mr.lee";
 		System.out.println(StringUtils.capitalize(tem4));
 		
@@ -41,7 +41,7 @@ public class StringUsage {
 		//按指定分隔符生成字串
 		System.out.println(StringUtils.repeat("?", ",", 3));
 		
-		//分割字符�?--注意会合并重复的分隔�?
+		//分割字符串--注意会合并重复的分隔符
 		Arrays.asList(StringUtils.split("a/b/c//d", "/")).stream().forEach(System.out::println);
 		
 		//you can find more in StringUtils

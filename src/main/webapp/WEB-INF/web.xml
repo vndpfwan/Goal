@@ -19,10 +19,19 @@
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/jsp/error.jsp</location>
 	</error-page>
+  
+  	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+  	</context-param>
 	<!-- spring mvc config -->
 	<servlet>
 		<servlet-name>spring-mvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/applicationContext.xml</param-value>
+		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
   
@@ -30,15 +39,14 @@
 		<servlet-name>spring-mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-  
 	<!-- spring configuration file -->
-	<context-param>
+	<!--<context-param> 
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/classes/spring-mybatis.xml,
-			/WEB-INF/spring-mvc-servlet.xml,
+			classpath:spring-mvc-servlet.xml
 		</param-value>
-	</context-param>
+	</context-param>-->
   
 	<!-- spring listener -->
 	<listener>
@@ -52,7 +60,7 @@
 
 	<context-param>  
 	    <param-name>logbackConfigLocation</param-name>  
-	    <param-value>classpath:/classes/logback.xml</param-value>  
+	    <param-value>classpath:/classes/logback.xml</param-value> 
 	</context-param>  
 	
 	<!-- encode filter -->  
