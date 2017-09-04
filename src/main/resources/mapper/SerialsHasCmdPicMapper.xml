@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.goal.dao.SerialsHasCmdPicMapper">
+  <resultMap id="BaseResultMap" type="com.goal.po.SerialsHasCmdPic">
+    <result column="t_serials_id" jdbcType="VARCHAR" property="tSerialsId" />
+    <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.goal.po.SerialsHasCmdPic">
+    insert into t_serials_has_t_cmd_pic (t_serials_id, t_Pic_id)
+    values (#{tSerialsId,jdbcType=VARCHAR}, #{tPicId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.goal.po.SerialsHasCmdPic">
+    insert into t_serials_has_t_cmd_pic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tSerialsId != null">
+        t_serials_id,
+      </if>
+      <if test="tPicId != null">
+        t_Pic_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tSerialsId != null">
+        #{tSerialsId,jdbcType=VARCHAR},
+      </if>
+      <if test="tPicId != null">
+        #{tPicId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.goal.po.SerialsHasCmdPic">
+    <result column="t_serials_id" jdbcType="VARCHAR" property="tSerialsId" />
+    <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    t_serials_id, t_Pic_id
+  </sql>
+  <select id="selectByExample" parameterType="com.goal.po.SerialsHasCmdPicExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_serials_has_t_cmd_pic
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.goal.po.SerialsHasCmdPicExample">
+    delete from t_serials_has_t_cmd_pic
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.goal.po.SerialsHasCmdPic">
+    insert into t_serials_has_t_cmd_pic (t_serials_id, t_Pic_id)
+    values (#{tSerialsId,jdbcType=VARCHAR}, #{tPicId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.goal.po.SerialsHasCmdPic">
+    insert into t_serials_has_t_cmd_pic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tSerialsId != null">
+        t_serials_id,
+      </if>
+      <if test="tPicId != null">
+        t_Pic_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tSerialsId != null">
+        #{tSerialsId,jdbcType=VARCHAR},
+      </if>
+      <if test="tPicId != null">
+        #{tPicId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.goal.po.SerialsHasCmdPicExample" resultType="java.lang.Integer">
+    select count(*) from t_serials_has_t_cmd_pic
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_serials_has_t_cmd_pic
+    <set>
+      <if test="record.tSerialsId != null">
+        t_serials_id = #{record.tSerialsId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tPicId != null">
+        t_Pic_id = #{record.tPicId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_serials_has_t_cmd_pic
+    set t_serials_id = #{record.tSerialsId,jdbcType=VARCHAR},
+      t_Pic_id = #{record.tPicId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
