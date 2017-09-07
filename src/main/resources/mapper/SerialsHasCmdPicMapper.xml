@@ -5,33 +5,6 @@
     <result column="t_serials_id" jdbcType="VARCHAR" property="tSerialsId" />
     <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />
   </resultMap>
-  <insert id="insert" parameterType="com.goal.po.SerialsHasCmdPic">
-    insert into t_serials_has_t_cmd_pic (t_serials_id, t_Pic_id)
-    values (#{tSerialsId,jdbcType=VARCHAR}, #{tPicId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.SerialsHasCmdPic">
-    insert into t_serials_has_t_cmd_pic
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tSerialsId != null">
-        t_serials_id,
-      </if>
-      <if test="tPicId != null">
-        t_Pic_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tSerialsId != null">
-        #{tSerialsId,jdbcType=VARCHAR},
-      </if>
-      <if test="tPicId != null">
-        #{tPicId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <resultMap id="BaseResultMap" type="com.goal.po.SerialsHasCmdPic">
-    <result column="t_serials_id" jdbcType="VARCHAR" property="tSerialsId" />
-    <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />
-  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

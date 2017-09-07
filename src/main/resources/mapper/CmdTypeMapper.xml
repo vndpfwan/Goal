@@ -51,13 +51,6 @@
       </if>
     </trim>
   </insert>
-  <resultMap id="BaseResultMap" type="com.goal.po.CmdType">
-    <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
-    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
-    <result column="create_tsp" jdbcType="TIMESTAMP" property="createTsp" />
-    <result column="change_tsp" jdbcType="TIMESTAMP" property="changeTsp" />
-  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -139,49 +132,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goal.po.CmdType">
-    insert into t_cmd_type (id, parent_id, type_name, 
-      create_tsp, change_tsp)
-    values (#{id,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, 
-      #{createTsp,jdbcType=TIMESTAMP}, #{changeTsp,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.CmdType">
-    insert into t_cmd_type
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="parentId != null">
-        parent_id,
-      </if>
-      <if test="typeName != null">
-        type_name,
-      </if>
-      <if test="createTsp != null">
-        create_tsp,
-      </if>
-      <if test="changeTsp != null">
-        change_tsp,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="parentId != null">
-        #{parentId,jdbcType=VARCHAR},
-      </if>
-      <if test="typeName != null">
-        #{typeName,jdbcType=VARCHAR},
-      </if>
-      <if test="createTsp != null">
-        #{createTsp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="changeTsp != null">
-        #{changeTsp,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
   <select id="countByExample" parameterType="com.goal.po.CmdTypeExample" resultType="java.lang.Integer">
     select count(*) from t_cmd_type
     <if test="_parameter != null">

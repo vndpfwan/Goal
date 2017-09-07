@@ -28,10 +28,6 @@
       </if>
     </trim>
   </insert>
-  <resultMap id="BaseResultMap" type="com.goal.po.BrandHasCmdType">
-    <result column="t_Brand_id" jdbcType="VARCHAR" property="tBrandId" />
-    <result column="t_Cmd_Type_id" jdbcType="VARCHAR" property="tCmdTypeId" />
-  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -113,29 +109,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goal.po.BrandHasCmdType">
-    insert into t_brand_has_t_cmd_type (t_Brand_id, t_Cmd_Type_id)
-    values (#{tBrandId,jdbcType=VARCHAR}, #{tCmdTypeId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.BrandHasCmdType">
-    insert into t_brand_has_t_cmd_type
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tBrandId != null">
-        t_Brand_id,
-      </if>
-      <if test="tCmdTypeId != null">
-        t_Cmd_Type_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tBrandId != null">
-        #{tBrandId,jdbcType=VARCHAR},
-      </if>
-      <if test="tCmdTypeId != null">
-        #{tCmdTypeId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
   <select id="countByExample" parameterType="com.goal.po.BrandHasCmdTypeExample" resultType="java.lang.Integer">
     select count(*) from t_brand_has_t_cmd_type
     <if test="_parameter != null">

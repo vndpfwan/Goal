@@ -67,15 +67,6 @@
       </if>
     </trim>
   </insert>
-  <resultMap id="BaseResultMap" type="com.goal.po.Picture">
-    <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="pic_type" jdbcType="VARCHAR" property="picType" />
-    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
-    <result column="show_as" jdbcType="VARCHAR" property="showAs" />
-    <result column="pic_index" jdbcType="VARCHAR" property="picIndex" />
-    <result column="change_tsp" jdbcType="TIMESTAMP" property="changeTsp" />
-    <result column="create_tsp" jdbcType="TIMESTAMP" property="createTsp" />
-  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -157,63 +148,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goal.po.Picture">
-    insert into t_picture (id, pic_type, pic_url, 
-      show_as, pic_index, change_tsp, 
-      create_tsp)
-    values (#{id,jdbcType=VARCHAR}, #{picType,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, 
-      #{showAs,jdbcType=VARCHAR}, #{picIndex,jdbcType=VARCHAR}, #{changeTsp,jdbcType=TIMESTAMP}, 
-      #{createTsp,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.Picture">
-    insert into t_picture
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="picType != null">
-        pic_type,
-      </if>
-      <if test="picUrl != null">
-        pic_url,
-      </if>
-      <if test="showAs != null">
-        show_as,
-      </if>
-      <if test="picIndex != null">
-        pic_index,
-      </if>
-      <if test="changeTsp != null">
-        change_tsp,
-      </if>
-      <if test="createTsp != null">
-        create_tsp,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="picType != null">
-        #{picType,jdbcType=VARCHAR},
-      </if>
-      <if test="picUrl != null">
-        #{picUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="showAs != null">
-        #{showAs,jdbcType=VARCHAR},
-      </if>
-      <if test="picIndex != null">
-        #{picIndex,jdbcType=VARCHAR},
-      </if>
-      <if test="changeTsp != null">
-        #{changeTsp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTsp != null">
-        #{createTsp,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
   <select id="countByExample" parameterType="com.goal.po.PictureExample" resultType="java.lang.Integer">
     select count(*) from t_picture
     <if test="_parameter != null">

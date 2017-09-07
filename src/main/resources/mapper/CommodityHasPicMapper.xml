@@ -28,10 +28,6 @@
       </if>
     </trim>
   </insert>
-  <resultMap id="BaseResultMap" type="com.goal.po.CommodityHasPic">
-    <result column="t_Commodity_id" jdbcType="VARCHAR" property="tCommodityId" />
-    <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />
-  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -113,29 +109,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goal.po.CommodityHasPic">
-    insert into t_commodity_has_t_pic (t_Commodity_id, t_Pic_id)
-    values (#{tCommodityId,jdbcType=VARCHAR}, #{tPicId,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.CommodityHasPic">
-    insert into t_commodity_has_t_pic
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tCommodityId != null">
-        t_Commodity_id,
-      </if>
-      <if test="tPicId != null">
-        t_Pic_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tCommodityId != null">
-        #{tCommodityId,jdbcType=VARCHAR},
-      </if>
-      <if test="tPicId != null">
-        #{tPicId,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
   <select id="countByExample" parameterType="com.goal.po.CommodityHasPicExample" resultType="java.lang.Integer">
     select count(*) from t_commodity_has_t_pic
     <if test="_parameter != null">
