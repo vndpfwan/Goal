@@ -26,7 +26,9 @@ public class SerialsController extends AbstractController{
 	 */
 	@RequestMapping(value="/sliders",method=RequestMethod.GET)
 	public @ResponseBody List<SerialsForm> getSliderList(){
-		
-		return helper.getSliderListByParentId(helper.getSerialForm());
+		logger.info("request service: getSlider list");
+		return helper.getSliderListByParentId();
 	}
+	
+	
 }
