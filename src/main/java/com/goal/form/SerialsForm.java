@@ -6,7 +6,7 @@ package com.goal.form;
  *
  */
 public class SerialsForm {
-	
+
 	/**
 	 * 系列id
 	 */
@@ -70,6 +70,6 @@ public class SerialsForm {
 	
 	@Override
 	public String toString() {
-		return "Serial [serialsId="+serialsId+",serialsName="+serialsName+",url="+url+"+\",picURL=\"+picURL+\"]";
+		return "SerialSliderDTO [serialsId="+serialsId+",serialsName="+serialsName+",url="+url+"+\",picURL=\"+picURL+\"]";
 	}
 }
