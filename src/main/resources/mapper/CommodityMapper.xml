@@ -155,69 +155,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.goal.po.Commodity">
-    insert into t_commodity (id, cmd_name, cmd_desc, 
-      cmd_price, create_tsp, change_tsp, 
-      t_Cmd_Type_id1, t_Brand_id1)
-    values (#{id,jdbcType=VARCHAR}, #{cmdName,jdbcType=VARCHAR}, #{cmdDesc,jdbcType=VARCHAR}, 
-      #{cmdPrice,jdbcType=VARCHAR}, #{createTsp,jdbcType=TIMESTAMP}, #{changeTsp,jdbcType=TIMESTAMP}, 
-      #{tCmdTypeId1,jdbcType=VARCHAR}, #{tBrandId1,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.goal.po.Commodity">
-    insert into t_commodity
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="cmdName != null">
-        cmd_name,
-      </if>
-      <if test="cmdDesc != null">
-        cmd_desc,
-      </if>
-      <if test="cmdPrice != null">
-        cmd_price,
-      </if>
-      <if test="createTsp != null">
-        create_tsp,
-      </if>
-      <if test="changeTsp != null">
-        change_tsp,
-      </if>
-      <if test="tCmdTypeId1 != null">
-        t_Cmd_Type_id1,
-      </if>
-      <if test="tBrandId1 != null">
-        t_Brand_id1,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="cmdName != null">
-        #{cmdName,jdbcType=VARCHAR},
-      </if>
-      <if test="cmdDesc != null">
-        #{cmdDesc,jdbcType=VARCHAR},
-      </if>
-      <if test="cmdPrice != null">
-        #{cmdPrice,jdbcType=VARCHAR},
-      </if>
-      <if test="createTsp != null">
-        #{createTsp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="changeTsp != null">
-        #{changeTsp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="tCmdTypeId1 != null">
-        #{tCmdTypeId1,jdbcType=VARCHAR},
-      </if>
-      <if test="tBrandId1 != null">
-        #{tBrandId1,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
   <select id="countByExample" parameterType="com.goal.po.CommodityExample" resultType="java.lang.Integer">
     select count(*) from t_commodity
     <if test="_parameter != null">
