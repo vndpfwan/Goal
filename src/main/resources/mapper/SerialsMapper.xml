@@ -170,10 +170,13 @@
     <result column="serial_url" jdbcType="VARCHAR" property="url" />
     <result column="pic_url" jdbcType="VARCHAR" property="picURL" />
   </resultMap>
-  <select id="getSerialsListByParentId" parameterType="com.goal.dto.SerialSliderDTO" resultMap="SliderResultMap">
+  <select id="getSerialsListBySerialDTO" parameterType="com.goal.po.SerialsExample" resultMap="SliderResultMap">
   	SELECT a.id,a.serial_name,a.serial_url,c.pic_url FROM shop.t_serials a left join shop.t_serials_has_t_cmd_pic b on a.id=b.t_serials_id left join shop.t_picture c on b.t_Pic_id=c.id
-    <if test="pSerialsId != null">
-      where a.p_serial_id=#{pSerialsId}
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
     </if>
   </select>
   
