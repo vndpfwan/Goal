@@ -2,9 +2,25 @@ package com.goal.dto;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
-public class SerialSliderDTO {
+/**
+ * serials DTO
+ * @author lee
+ *
+ */
+public class SerialDTO {
+	/**
+	 * serial id
+	 */
 	private String serialsId;
 	
+	/**
+	 * serials类型
+	 */
+	private String serialType;
+	
+	/**
+	 * 父serials ID
+	 */
 	private String pSerialsId;
 
 	public String getSerialsId() {
@@ -23,6 +39,15 @@ public class SerialSliderDTO {
 		this.pSerialsId = pSerialsId;
 	}
 	
+	
+	public String getSerialType() {
+		return serialType;
+	}
+
+	public void setSerialType(String serialType) {
+		this.serialType = serialType;
+	}
+
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this);

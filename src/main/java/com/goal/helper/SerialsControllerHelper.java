@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.goal.dto.SerialSliderDTO;
+import com.goal.dto.SerialDTO;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 import com.goal.service.SerialsService;
@@ -26,8 +26,23 @@ public class SerialsControllerHelper extends GenericControllerHelper {
 	 */
 	public List<SerialsForm> getSliderListByParentId() {
 		//to_do 从配置文件中取得父系列的id
-		SerialSliderDTO dto = new SerialSliderDTO();
+		SerialDTO dto = new SerialDTO();
 		dto.setpSerialsId("");//read slider parent id from config file,to be implemented
 		return sService.getSerialsListByParentId(dto);
 	}
+	
+	/**
+	 * 从配置文件中取得serial type
+	 * @return
+	 */
+	public List<SerialsForm> getSerialsBySerialType(){
+
+		//to_do 从配置文件中取得系列类型
+		String serialType = "";
+		
+		SerialDTO dto = new SerialDTO();
+		dto.setSerialType(serialType);
+		return sService.getSerialsListByParentId(dto);
+	}
+	
 }

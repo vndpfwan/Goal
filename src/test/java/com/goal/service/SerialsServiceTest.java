@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.goal.dto.SerialSliderDTO;
+import com.goal.dto.SerialDTO;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 
@@ -44,7 +44,7 @@ public class SerialsServiceTest {
 	public void testGetSerialsListByParentId() {
 		log.info("test start for the getSerialsListByParentId()...");
 		try {
-			SerialSliderDTO s = new SerialSliderDTO();
+			SerialDTO s = new SerialDTO();
 			s.setSerialsId("123");
 			List<SerialsForm> list = service.getSerialsListByParentId(s);
 			list.stream().forEach(sf->System.out.println(sf.toString()));

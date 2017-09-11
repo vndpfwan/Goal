@@ -30,5 +30,14 @@ public class SerialsController extends AbstractController{
 		return helper.getSliderListByParentId();
 	}
 	
+	/**
+	 * 取得推荐系列的集合
+	 * @return
+	 */
+	@RequestMapping(value="/recommend",method=RequestMethod.GET)
+	public @ResponseBody List<SerialsForm> getRecommendSerialsList(){
+		logger.info("request service: getSlider list");
+		return helper.getSliderListByParentId();
+	}
 	
 }
