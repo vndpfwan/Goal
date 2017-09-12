@@ -183,18 +183,21 @@
   </select>
   
   <resultMap id="RecommendCmdResultMap" type="com.goal.form.RecommendCmdForm">
-    <result column="id" jdbcType="VARCHAR" property="CmdId" />
+    <result column="cmd_id" jdbcType="VARCHAR" property="CmdId" />
     <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />
     <result column="cmd_desc" jdbcType="VARCHAR" property="cmdDesc" />
     <result column="cmd_price" jdbcType="VARCHAR" property="cmdPrice" />
     <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
   </resultMap>
-  <select id="">
+  <select id="getRecommendCmdBySerialDTO" parameterType="com.goal.dto.SerialDTO" resultMap="RecommendCmdResultMap">
   select c.id cmd_id,c.cmd_name,c.cmd_desc,c.cmd_price,e.pic_url from shop.t_serials a left join 
   shop.t_serials_has_t_commodity b on a.id=b.t_serials_id left join
    shop.t_commodity c on b.t_Commodity_id=c.id left join
     shop.t_commodity_has_t_pic d on c.id=d.t_Commodity_id
      left join shop.t_picture e on d.t_Pic_id=e.id
+      <if test="serialsId != null">
+       where a.id = #{serialsId,jdbcType=VARCHAR}
+      </if>
   </select>
   
   <update id="updateByExampleSelective" parameterType="map">
