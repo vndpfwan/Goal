@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.helper.SerialsControllerHelper;
 
@@ -31,13 +32,14 @@ public class SerialsController extends AbstractController{
 	}
 	
 	/**
-	 * 取得推荐系列的集合
+	 * 取得推荐商品的集合
 	 * @return
 	 */
 	@RequestMapping(value="/recommend",method=RequestMethod.GET)
-	public @ResponseBody List<SerialsForm> getRecommendSerialsList(){
+	public @ResponseBody List<RecommendCmdForm> getRecommendCmdList(){
 		logger.info("request service: getSlider list");
-		return helper.getSliderListByParentId();
+		return helper.getRecommendCmdBySerialId();
 	}
+	
 	
 }

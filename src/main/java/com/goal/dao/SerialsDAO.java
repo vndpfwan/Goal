@@ -36,4 +36,5 @@ public interface SerialsDAO {
 	 * @return
 	 */
 	public List<SerialsForm> getSerialsListBySerialDTO(SerialsExample example);
+	
 }

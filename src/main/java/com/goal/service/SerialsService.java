@@ -3,6 +3,7 @@ package com.goal.service;
 import java.util.List;
 
 import com.goal.dto.SerialDTO;
+import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 
@@ -15,6 +16,8 @@ public interface SerialsService {
 	Serials getSerials(Serials serials);
 	
 	List<SerialsForm> getSerialsListByParentId(SerialDTO dto);
+	
+	List<RecommendCmdForm> getRecommendCmdBySerialsId(SerialDTO dto);
 	
 	int insert(Serials serials);
 }

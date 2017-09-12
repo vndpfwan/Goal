@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.goal.dto.SerialDTO;
+import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 import com.goal.service.SerialsService;
@@ -32,17 +33,15 @@ public class SerialsControllerHelper extends GenericControllerHelper {
 	}
 	
 	/**
-	 * 从配置文件中取得serial type
+	 * 通过系列取得推荐商品集合
 	 * @return
 	 */
-	public List<SerialsForm> getSerialsBySerialType(){
-
-		//to_do 从配置文件中取得系列类型
-		String serialType = "";
-		
+	public List<RecommendCmdForm> getRecommendCmdBySerialId(){
+		//to_do 从配置文件中取得推荐系列的id
 		SerialDTO dto = new SerialDTO();
-		dto.setSerialType(serialType);
-		return sService.getSerialsListByParentId(dto);
+		dto.setSerialsId("");//to be implemented
+		return sService.getRecommendCmdBySerialsId(dto);
+		
 	}
 	
 }

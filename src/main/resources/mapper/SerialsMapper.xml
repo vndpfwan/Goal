@@ -171,13 +171,30 @@
     <result column="pic_url" jdbcType="VARCHAR" property="picURL" />
   </resultMap>
   <select id="getSerialsListBySerialDTO" parameterType="com.goal.po.SerialsExample" resultMap="SliderResultMap">
-  	SELECT a.id,a.serial_name,a.serial_url,c.pic_url FROM shop.t_serials a left join shop.t_serials_has_t_cmd_pic b on a.id=b.t_serials_id left join shop.t_picture c on b.t_Pic_id=c.id
+  	SELECT a.id,a.serial_name,a.serial_url,c.pic_url FROM shop.t_serials a left join
+  	 shop.t_serials_has_t_cmd_pic b on a.id=b.t_serials_id left join
+  	  shop.t_picture c on b.t_Pic_id=c.id
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
+  </select>
+  
+  <resultMap id="RecommendCmdResultMap" type="com.goal.form.RecommendCmdForm">
+    <result column="id" jdbcType="VARCHAR" property="CmdId" />
+    <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />
+    <result column="cmd_desc" jdbcType="VARCHAR" property="cmdDesc" />
+    <result column="cmd_price" jdbcType="VARCHAR" property="cmdPrice" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+  </resultMap>
+  <select id="">
+  select c.id cmd_id,c.cmd_name,c.cmd_desc,c.cmd_price,e.pic_url from shop.t_serials a left join 
+  shop.t_serials_has_t_commodity b on a.id=b.t_serials_id left join
+   shop.t_commodity c on b.t_Commodity_id=c.id left join
+    shop.t_commodity_has_t_pic d on c.id=d.t_Commodity_id
+     left join shop.t_picture e on d.t_Pic_id=e.id
   </select>
   
   <update id="updateByExampleSelective" parameterType="map">

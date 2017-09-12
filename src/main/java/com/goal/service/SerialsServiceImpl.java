@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.goal.dao.SerialsDAO;
 import com.goal.dto.SerialDTO;
+import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 import com.goal.po.SerialsExample;
@@ -57,6 +58,12 @@ public class SerialsServiceImpl implements SerialsService{
 	 */
 	public int insert(Serials serials) {
 		return serialsDAO.insertSelective(serials);
+	}
+
+	@Override
+	public List<RecommendCmdForm> getRecommendCmdBySerialsId(SerialDTO dto) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
