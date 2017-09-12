@@ -1,22 +1,14 @@
 package com.goal.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.goal.helper.GenericControllerHelper;
-import com.goal.po.ErrorInfo;
-import com.goal.util.JsonUtil;
-import com.goal.util.StringUtil;
 
 /**
  * this class is the super class of all controller, used to do the generic resource handle.

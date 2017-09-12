@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.goal.dao.CommodityHasPicMapper">
+<mapper namespace="com.goal.dao.CommodityHasPicDAO">
   <resultMap id="BaseResultMap" type="com.goal.po.CommodityHasPic">
     <result column="t_Commodity_id" jdbcType="VARCHAR" property="tCommodityId" />
     <result column="t_Pic_id" jdbcType="VARCHAR" property="tPicId" />

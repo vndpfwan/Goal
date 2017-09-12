@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.goal.dao.PictureMapper">
+<mapper namespace="com.goal.dao.PictureDAO">
   <resultMap id="BaseResultMap" type="com.goal.po.Picture">
     <result column="id" jdbcType="VARCHAR" property="id" />
     <result column="pic_type" jdbcType="VARCHAR" property="picType" />
@@ -10,6 +10,21 @@
     <result column="change_tsp" jdbcType="TIMESTAMP" property="changeTsp" />
     <result column="create_tsp" jdbcType="TIMESTAMP" property="createTsp" />
   </resultMap>
+  
+  <!--McGee add for Commodity detail display pictures-->
+  <resultMap id="PicturesResultMap" type="com.goal.form.CmdPicForm">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="pic_index" jdbcType="VARCHAR" property="picIndex" />
+  </resultMap>
+  
+  <select id="getPicturesByCmdId" parameterType="com.goal.dto.CmdPicDTO" resultMap="PicturesResultMap">
+    select pic.id,pic.pic_url,pic.pic_index from shop.t_picture pic 
+    join shop.t_commodity_has_t_pic chp on chp.t_Pic_id=pic.id
+    join shop.t_commodity cmd on chp.t_Commodity_id=cmd.id
+    where cmd.id=#{record.cmdId} and pic.show_as=#{record.showAs}
+  </select>
+  
   <insert id="insert" parameterType="com.goal.po.Picture">
     insert into t_picture (id, pic_type, pic_url, 
       show_as, pic_index, change_tsp, 
