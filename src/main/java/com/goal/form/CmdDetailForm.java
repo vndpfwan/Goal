@@ -1,7 +1,5 @@
 package com.goal.form;
 
-import java.sql.Date;
-import java.util.List;
 
 public class CmdDetailForm {
 
@@ -9,8 +7,6 @@ public class CmdDetailForm {
 	private String cmdName;
 	private String cmdDesc;
 	private String cmdPrice;
-	private List<CmdPicForm> cmdPics;
-	private List<CmdParamForm> cmdParams;
 	private String brandName;
 	private String typeName;
 	public String getId() {
@@ -37,18 +33,6 @@ public class CmdDetailForm {
 	public void setCmdPrice(String cmdPrice) {
 		this.cmdPrice = cmdPrice;
 	}
-	public List<CmdPicForm> getCmdPics() {
-		return cmdPics;
-	}
-	public void setCmdPics(List<CmdPicForm> cmdPics) {
-		this.cmdPics = cmdPics;
-	}
-	public List<CmdParamForm> getCmdParams() {
-		return cmdParams;
-	}
-	public void setCmdParams(List<CmdParamForm> cmdParams) {
-		this.cmdParams = cmdParams;
-	}
 	public String getBrandName() {
 		return brandName;
 	}
@@ -60,6 +44,11 @@ public class CmdDetailForm {
 	}
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
+	}
+	@Override
+	public String toString() {
+		return "CmdDetailForm [id=" + id + ", cmdName=" + cmdName + ", cmdDesc=" + cmdDesc + ", cmdPrice=" + cmdPrice
+				+ ", brandName=" + brandName + ", typeName=" + typeName + "]";
 	}
 	
 }

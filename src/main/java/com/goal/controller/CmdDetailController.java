@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.goal.form.CmdDetailForm;
-import com.goal.po.Commodity;
+import com.goal.helper.CmdDetailControllerHelper;
 
 @Controller
 @RequestMapping(value="/detail")
@@ -36,5 +36,36 @@ public class CmdDetailController extends AbstractController {
 		logger.info(mapper.writeValueAsString(cmdDetailForm));
 		//cmdDetailForm
 		return cmdDetailForm;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/display/{cmdId}",method=RequestMethod.GET)
+	public Object getDetailPictures(@PathVariable String cmdId){
+		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		String showAs = "p";
+		return helper.getDisplayPicturesByCmdId(cmdId, showAs);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/description/{cmdId}",method=RequestMethod.GET)
+	public Object getDetailDescriprions(@PathVariable String cmdId){
+		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		String showAs="d";
+		return helper.getDescriptonPicturesByCmdId(cmdId, showAs);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/commodity/{cmdId}",method=RequestMethod.GET)
+	public Object getCommodity(@PathVariable String cmdId){
+		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		return helper.getCommodityByCmdId(cmdId);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/param/{cmdId}",method=RequestMethod.GET)
+	public Object getCmdParam(@PathVariable String cmdId){
+		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		return helper.getCmdParamsByCmdId(cmdId);
+		
 	}
 }

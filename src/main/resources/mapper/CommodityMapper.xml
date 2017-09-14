@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.goal.dao.CommodityMapper">
+<mapper namespace="com.goal.dao.CommodityDAO">
+	
+	<!--McGee add for select commodity basic info-->
+  <resultMap id="CommodityResultMap" type="com.goal.form.CmdDetailForm">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />
+    <result column="cmd_desc" jdbcType="VARCHAR" property="cmdDesc" />
+    <result column="cmd_price" jdbcType="VARCHAR" property="cmdPrice" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+  </resultMap>
+  <select id="getCommodityByCmdId" parameterType="String" resultMap="CommodityResultMap">
+    select cmd.id,cmd.cmd_name,cmd.cmd_desc,cmd.cmd_price,t.type_name,b.brand_name 
+	from shop.t_commodity cmd 
+    join shop.t_cmd_Type t on cmd.t_Cmd_Type_id1=t.id 
+    join shop.t_brand b on cmd.t_Brand_id1=b.id 
+    where cmd.id=#{record}
+  </select>
+	
   <resultMap id="BaseResultMap" type="com.goal.po.Commodity">
     <result column="id" jdbcType="VARCHAR" property="id" />
     <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />

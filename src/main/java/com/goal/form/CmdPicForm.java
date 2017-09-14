@@ -2,15 +2,15 @@ package com.goal.form;
 
 public class CmdPicForm {
 
-	private String picId;
+	private String id;
 	private String picUrl;
 	private String picIndex;
 	private String showAs;
-	public String getPicId() {
-		return picId;
+	public String getId() {
+		return id;
 	}
-	public void setPicId(String picId) {
-		this.picId = picId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getPicUrl() {
 		return picUrl;
@@ -30,4 +30,9 @@ public class CmdPicForm {
 	public void setShowAs(String showAs) {
 		this.showAs = showAs;
 	}
+	@Override
+	public String toString() {
+		return "CmdPicForm [id=" + id + ", picUrl=" + picUrl + ", picIndex=" + picIndex + ", showAs=" + showAs + "]";
+	}
+	
 }
