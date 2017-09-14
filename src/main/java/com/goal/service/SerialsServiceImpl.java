@@ -61,9 +61,15 @@ public class SerialsServiceImpl implements SerialsService{
 	}
 
 	@Override
+	/**
+	 *  通过dto对象取得推荐商品集合
+	 */
 	public List<RecommendCmdForm> getRecommendCmdBySerialsId(SerialDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+//		SerialsExample se = new SerialsExample();
+//		if(!StringUtil.isEmpty(dto.getSerialsId())){
+//			se.createCriteria().andIdEqualTo(dto.getSerialsId());
+//		}
+		return serialsDAO.getRecommendCmdBySerialDTO(dto);
 	}
 
 }
