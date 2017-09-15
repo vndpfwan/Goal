@@ -23,6 +23,11 @@ public class SerialDTO {
 	 */
 	private String pSerialsId;
 
+	/**
+	 * 图片展示为
+	 */
+	private String showAs;
+	
 	public String getSerialsId() {
 		return serialsId;
 	}
@@ -46,6 +51,14 @@ public class SerialDTO {
 
 	public void setSerialType(String serialType) {
 		this.serialType = serialType;
+	}
+
+	public String getShowAs() {
+		return showAs;
+	}
+
+	public void setShowAs(String showAs) {
+		this.showAs = showAs;
 	}
 
 	@Override

@@ -4,14 +4,14 @@
   <resultMap id="BaseResultMap" type="com.goal.po.Brand">
     <result column="id" jdbcType="VARCHAR" property="id" />
     <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
-    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="brand_desc" jdbcType="VARCHAR" property="brandDesc" />
     <result column="create_tsp" jdbcType="TIMESTAMP" property="createTsp" />
     <result column="change_tsp" jdbcType="TIMESTAMP" property="changeTsp" />
   </resultMap>
   <insert id="insert" parameterType="com.goal.po.Brand">
-    insert into t_brand (id, brand_name, desc, 
+    insert into t_brand (id, brand_name, brand_desc, 
       create_tsp, change_tsp)
-    values (#{id,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, #{brandDesc,jdbcType=VARCHAR}, 
       #{createTsp,jdbcType=TIMESTAMP}, #{changeTsp,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.goal.po.Brand">
@@ -23,8 +23,8 @@
       <if test="brandName != null">
         brand_name,
       </if>
-      <if test="desc != null">
-        desc,
+      <if test="brandDesc != null">
+        brand_desc,
       </if>
       <if test="createTsp != null">
         create_tsp,
@@ -40,8 +40,8 @@
       <if test="brandName != null">
         #{brandName,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null">
-        #{desc,jdbcType=VARCHAR},
+      <if test="brand_desc != null">
+        #{brandDesc,jdbcType=VARCHAR},
       </if>
       <if test="createTsp != null">
         #{createTsp,jdbcType=TIMESTAMP},
@@ -110,7 +110,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, brand_name, desc, create_tsp, change_tsp
+    id, brand_name, brand_desc, create_tsp, change_tsp
   </sql>
   <select id="selectByExample" parameterType="com.goal.po.BrandExample" resultMap="BaseResultMap">
     select
@@ -147,8 +147,8 @@
       <if test="record.brandName != null">
         brand_name = #{record.brandName,jdbcType=VARCHAR},
       </if>
-      <if test="record.desc != null">
-        desc = #{record.desc,jdbcType=VARCHAR},
+      <if test="record.brandDesc != null">
+        brand_desc = #{record.brandDesc,jdbcType=VARCHAR},
       </if>
       <if test="record.createTsp != null">
         create_tsp = #{record.createTsp,jdbcType=TIMESTAMP},
@@ -165,7 +165,7 @@
     update t_brand
     set id = #{record.id,jdbcType=VARCHAR},
       brand_name = #{record.brandName,jdbcType=VARCHAR},
-      desc = #{record.desc,jdbcType=VARCHAR},
+      brand_desc = #{record.brandDesc,jdbcType=VARCHAR},
       create_tsp = #{record.createTsp,jdbcType=TIMESTAMP},
       change_tsp = #{record.changeTsp,jdbcType=TIMESTAMP}
     <if test="_parameter != null">

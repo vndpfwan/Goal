@@ -195,9 +195,14 @@
    shop.t_commodity c on b.t_Commodity_id=c.id left join
     shop.t_commodity_has_t_pic d on c.id=d.t_Commodity_id
      left join shop.t_picture e on d.t_Pic_id=e.id
-      <if test="serialsId != null">
-       where a.id = #{serialsId,jdbcType=VARCHAR}
-      </if>
+     <where>
+	      <if test="serialsId != null">
+	       a.id = #{serialsId,jdbcType=VARCHAR}
+	      </if>
+     	<if test="showAs!=null">
+     		AND e.show_as = #{showAs,jdbcType=VARCHAR}
+     	</if>
+     </where>
   </select>
   
   <update id="updateByExampleSelective" parameterType="map">

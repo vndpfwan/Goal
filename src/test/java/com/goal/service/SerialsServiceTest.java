@@ -46,7 +46,7 @@ public class SerialsServiceTest {
 		log.info("test start for the getSerialsListByParentId()...");
 		try {
 			SerialDTO s = new SerialDTO();
-			s.setSerialsId("123");
+			s.setSerialsId("001");
 			List<SerialsForm> list = service.getSerialsListByParentId(s);
 			list.stream().forEach(sf->System.out.println(sf.toString()));
 		} catch (Exception e) {
@@ -60,7 +60,8 @@ public class SerialsServiceTest {
 		log.info("test start for the getRecommendCmdBySerialsId()...");
 		try {
 			SerialDTO s = new SerialDTO();
-			s.setSerialsId("a06e75c2-067a-432b-a27e-026f4e365a6a");
+			s.setSerialsId("123");
+			s.setShowAs("01");
 			List<RecommendCmdForm> list = service.getRecommendCmdBySerialsId(s);
 			list.stream().forEach(sf->System.out.println(sf.toString()));
 		} catch (Exception e) {

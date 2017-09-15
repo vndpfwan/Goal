@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.goal.helper.GenericControllerHelper;
+import com.goal.util.Constant;
 
 /**
  * this class is the super class of all controller, used to do the generic resource handle.
@@ -18,6 +19,7 @@ import com.goal.helper.GenericControllerHelper;
 public abstract class AbstractController {
 	public static Logger logger = LoggerFactory.getLogger(AbstractController.class);
 	
+	public Constant CONSTANT;
 	@Resource
 	private GenericControllerHelper genericHelper;
 	

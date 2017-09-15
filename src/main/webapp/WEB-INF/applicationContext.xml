@@ -11,5 +11,4 @@
 				        http://www.springframework.org/schema/context/spring-context.xsd">
      <import resource="classpath*:/spring-mvc-servlet.xml"/>
      <import resource="classpath*:/spring-mybatis.xml"/>
-     <context:component-scan base-package="com.goal.helper"></context:component-scan>
 </beans>

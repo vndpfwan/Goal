@@ -2,12 +2,17 @@ package com.goal.po;
 
 import java.sql.Timestamp;
 
+/**
+ * 商品品牌model
+ * @author lizhiwei
+ *
+ */
 public class Brand {
     private String id;
 
     private String brandName;
 
-    private String desc;
+    private String brandDesc;
 
     private Timestamp createTsp;
 
@@ -29,15 +34,16 @@ public class Brand {
         this.brandName = brandName;
     }
 
-    public String getDesc() {
-        return desc;
-    }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+    public String getBrandDesc() {
+		return brandDesc;
+	}
 
-    public Timestamp getCreateTsp() {
+	public void setBrandDesc(String brandDesc) {
+		this.brandDesc = brandDesc;
+	}
+
+	public Timestamp getCreateTsp() {
         return createTsp;
     }
 
