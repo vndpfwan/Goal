@@ -18,7 +18,6 @@ import com.goal.util.StringUtil;
  * @author lizhiwei
  *
  */
-@Component
 public class GenericControllerHelper {
 	/**
 	 * get error json String

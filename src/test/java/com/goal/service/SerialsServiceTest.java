@@ -12,7 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.goal.dto.SerialSliderDTO;
+import com.goal.dto.SerialDTO;
+import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 
@@ -44,13 +45,29 @@ public class SerialsServiceTest {
 	public void testGetSerialsListByParentId() {
 		log.info("test start for the getSerialsListByParentId()...");
 		try {
-			SerialSliderDTO s = new SerialSliderDTO();
-			s.setSerialsId("123");
+			SerialDTO s = new SerialDTO();
+			s.setSerialsId("001");
 			List<SerialsForm> list = service.getSerialsListByParentId(s);
 			list.stream().forEach(sf->System.out.println(sf.toString()));
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void testGetRecommendCmdBySerialsId(){
+		log.info("test start for the getRecommendCmdBySerialsId()...");
+		try {
+			SerialDTO s = new SerialDTO();
+			s.setSerialsId("123");
+			s.setShowAs("01");
+			List<RecommendCmdForm> list = service.getRecommendCmdBySerialsId(s);
+			list.stream().forEach(sf->System.out.println(sf.toString()));
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			e.printStackTrace();
+		}
+		
 	}
 }
