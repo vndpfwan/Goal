@@ -9,6 +9,11 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * properties类的父类
+ * @author lizhiwei
+ *
+ */
 public abstract class GeneralProperties {
 
 	private final Logger LOG = LoggerFactory.getLogger(GeneralProperties.class);

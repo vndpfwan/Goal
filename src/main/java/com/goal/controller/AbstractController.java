@@ -16,7 +16,7 @@ import com.goal.util.Constant;
  * @author lizhiwei
  *
  */
-public abstract class AbstractController {
+public abstract class AbstractController implements Constant{
 	public static Logger logger = LoggerFactory.getLogger(AbstractController.class);
 	
 	public Constant CONSTANT;

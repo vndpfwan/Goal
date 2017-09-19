@@ -61,7 +61,7 @@ public class SerialsServiceTest {
 		try {
 			SerialDTO s = new SerialDTO();
 			s.setSerialsId("123");
-			s.setShowAs("01");
+			s.setShowAs("3");
 			List<RecommendCmdForm> list = service.getRecommendCmdBySerialsId(s);
 			list.stream().forEach(sf->System.out.println(sf.toString()));
 		} catch (Exception e) {

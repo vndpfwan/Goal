@@ -18,7 +18,7 @@ import org.springframework.web.context.WebApplicationContext;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(locations = { "classpath*:spring-mvc-servlet.xml" })
+@ContextConfiguration(locations = { "classpath*:spring-mybatis.xml","classpath*:spring-mvc-servlet.xml" })
 public abstract class GenericControllerTest {
 	@Autowired
 	private WebApplicationContext wac;
