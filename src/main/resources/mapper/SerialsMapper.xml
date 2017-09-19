@@ -197,7 +197,7 @@
      left join shop.t_picture e on d.t_Pic_id=e.id
      <where>
 	      <if test="serialsId != null">
-	       a.id = #{serialsId,jdbcType=VARCHAR}
+	       AND a.id = #{serialsId,jdbcType=VARCHAR}
 	      </if>
      	<if test="showAs!=null">
      		AND e.show_as = #{showAs,jdbcType=VARCHAR}

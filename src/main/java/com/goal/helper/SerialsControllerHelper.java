@@ -16,6 +16,7 @@ import com.goal.form.RecommendCmdForm;
 import com.goal.form.SerialsForm;
 import com.goal.po.Serials;
 import com.goal.service.SerialsService;
+import com.goal.util.StringUtil;
 import com.goal.util.properties.CommonConfigProperties;
 
 /**
@@ -39,7 +40,9 @@ public class SerialsControllerHelper extends GenericControllerHelper{
 		SerialDTO dto = new SerialDTO();
 		dto.setpSerialsId(CommonConfigProperties.getHomepageSliderSerialId());//read slider parent id from config file
 		LOG.info("sService:"+sService);
-		return sService.getSerialsListByParentId(dto);
+		List<SerialsForm> list = sService.getSerialsListByParentId(dto);
+		list.parallelStream().forEach(sForm->sForm.setPicURL(combinePictureUrl(sForm.getPicURL())));
+		return list;
 	}
 	
 	/**
@@ -50,8 +53,10 @@ public class SerialsControllerHelper extends GenericControllerHelper{
 		//to_do 从配置文件中取得推荐系列的id
 		SerialDTO dto = new SerialDTO();
 		dto.setSerialsId(CommonConfigProperties.getHomepageRecommendSerialId());
-		return sService.getRecommendCmdBySerialsId(dto);
-		
+		dto.setShowAs(PICTURE_SHOW_AS_FIRST_CHOICE);//从图片表中取得show_as为3的图片
+		List<RecommendCmdForm> list = sService.getRecommendCmdBySerialsId(dto);
+		list.parallelStream().forEach(rForm->rForm.setPicUrl(combinePictureUrl(rForm.getPicUrl())));
+		return list;
 	}
-	
+
 }
