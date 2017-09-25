@@ -25,14 +25,20 @@ public abstract class GeneralProperties {
 	protected abstract String getPropertiesName();
 	
 	protected GeneralProperties() {
-		initialize();
+		if(properties.isEmpty()) {
+			try {
+				initialize();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	/**
 	 * Loads properties from file.
 	 */
-	private final void initialize() {
+	private final synchronized void initialize() throws Exception{
 		FileInputStream is = null;
-		StringBuffer pathName = new StringBuffer(ProjectProperties.getRootPath());
+		StringBuilder pathName = new StringBuilder(ProjectProperties.getRootPath());
 		pathName.append(ProjectProperties.getPropertiesPath());
 		pathName.append("/");
 		pathName.append(getPropertiesName());
@@ -52,7 +58,7 @@ public abstract class GeneralProperties {
 					is.close();
 				}
 			} catch (IOException io) {
-				//ignore the excep
+				io.printStackTrace();
 			}
 		}
 	}

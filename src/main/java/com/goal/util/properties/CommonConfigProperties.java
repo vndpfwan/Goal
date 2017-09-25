@@ -1,11 +1,15 @@
 package com.goal.util.properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 此类用于项目一般属性的配置读取
  * @author lizhiwei
  *
  */
 public class CommonConfigProperties extends GeneralProperties{
+	private static final Logger LOG = LoggerFactory.getLogger(CommonConfigProperties.class);
 	/*首页滑动系列父id*/
 	private static final String HOMEPAGE_SLIDER_SERIAL_ID="homepage.slider.serial.id";
 	
@@ -15,7 +19,11 @@ public class CommonConfigProperties extends GeneralProperties{
 	/*图片文件URL前缀*/
 	private static final String FILE_PICTURE_PRE_URL = "file.pic.preUrl";
 	
-	private static CommonConfigProperties instance = new CommonConfigProperties();
+	private static final CommonConfigProperties instance = new CommonConfigProperties();
+	
+	private CommonConfigProperties() {
+		
+	}
 	@Override
 	protected String getPropertiesName() {
 		return "commonConfigProperties";
@@ -26,6 +34,7 @@ public class CommonConfigProperties extends GeneralProperties{
 	 * @return
 	 */
 	public static String getHomepageSliderSerialId() {
+		LOG.info("calling getHomepageSliderSerialId()");
 		return instance.getString(HOMEPAGE_SLIDER_SERIAL_ID);
 	}
 	
