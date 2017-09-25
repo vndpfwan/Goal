@@ -10,8 +10,11 @@ public class ProjectProperties extends BundleProperties{
 	
 	private static final String PROPERTIES_PATH = "properties.path";
 	
-	private static ProjectProperties instance = new ProjectProperties();
+	private static final ProjectProperties instance = new ProjectProperties();
 	
+	private ProjectProperties() {
+		
+	}
 	/**
 	 * 获得根目录路径
 	 * @return

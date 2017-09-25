@@ -25,7 +25,7 @@ public abstract class BundleProperties {
 	/**
 	 * 初始化方法
 	 */
-	protected final void init() {
+	protected final synchronized void init() {
 		logger.info("init the properties for:"+getPropertiesName());
 		setRb(findBundle(getPropertiesName()));
 	}
