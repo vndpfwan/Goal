@@ -45,7 +45,7 @@ public class CmdDetailServiceTest {
 		
 		String cmdId = "wpf";
 		CmdDetailForm form = c.getCommodityByCmdId(cmdId);
-		System.out.println(form.toString());
+//		System.out.println(form.toString());
 	}
 
 }
