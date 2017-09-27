@@ -2,7 +2,7 @@ package com.goal.helper;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
 import com.goal.dto.CmdPicDTO;
 import com.goal.form.CmdDetailForm;
@@ -12,7 +12,7 @@ import com.goal.service.CmdDetailService;
 
 public class CmdDetailControllerHelper extends GenericControllerHelper{
 
-	@Autowired
+	@Resource
 	CmdDetailService cmdDetailService;
 	
 	public List<CmdPicForm> getDisplayPicturesByCmdId(String cmdId,String showAs){

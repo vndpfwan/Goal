@@ -1,5 +1,7 @@
 package com.goal.controller;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
@@ -20,51 +22,35 @@ public class CmdDetailController extends AbstractController {
 
 	private static final Log logger = LogFactory.getLog(CmdDetailController.class);
 	
-	@ResponseBody
-	@RequestMapping(value="/{cmdId}",method=RequestMethod.GET)
-	public Object cmdDetail(@PathVariable String cmdId) throws JsonProcessingException{
-		ObjectMapper mapper= new ObjectMapper();
-		CmdDetailForm cmdDetailForm = new CmdDetailForm();
-		logger.info(mapper.writeValueAsString(cmdDetailForm));
-		return new CmdDetailForm();
-	}
-	
-	@ResponseBody
-	@RequestMapping(value="/Detail",method=RequestMethod.GET)
-	public Object cmdDetailJason(@RequestBody CmdDetailForm cmdDetailForm) throws JsonProcessingException{
-		ObjectMapper mapper= new ObjectMapper();
-		logger.info(mapper.writeValueAsString(cmdDetailForm));
-		//cmdDetailForm
-		return cmdDetailForm;
-	}
+	@Resource CmdDetailControllerHelper helper;
 	
 	@ResponseBody
 	@RequestMapping(value="/display/{cmdId}",method=RequestMethod.GET)
 	public Object getDetailPictures(@PathVariable String cmdId){
-		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
-		String showAs = "p";
+		logger.info("request to get detail pics");
+		String showAs = "4";
 		return helper.getDisplayPicturesByCmdId(cmdId, showAs);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/description/{cmdId}",method=RequestMethod.GET)
 	public Object getDetailDescriprions(@PathVariable String cmdId){
-		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
-		String showAs="d";
+		logger.info("request to get desc pics");
+		String showAs="5";
 		return helper.getDescriptonPicturesByCmdId(cmdId, showAs);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/commodity/{cmdId}",method=RequestMethod.GET)
 	public Object getCommodity(@PathVariable String cmdId){
-		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		logger.info("request to get cmd");
 		return helper.getCommodityByCmdId(cmdId);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/param/{cmdId}",method=RequestMethod.GET)
 	public Object getCmdParam(@PathVariable String cmdId){
-		CmdDetailControllerHelper helper = new CmdDetailControllerHelper();
+		logger.info("request to get params");
 		return helper.getCmdParamsByCmdId(cmdId);
 		
 	}
