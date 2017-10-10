@@ -36,7 +36,7 @@ public interface SerialsDAO {
 	 * @param example
 	 * @return
 	 */
-	public List<SerialsForm> getSerialsListBySerialDTO(SerialsExample example);
+	public List<SerialsForm> getSerialsListBySerialDTO(SerialDTO dto);
 	
 	/**
 	 * 根据serial dto取得推荐商品列表
