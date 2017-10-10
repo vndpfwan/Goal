@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class CommonConfigPropertiesTest {
 	private final Logger LOG = LoggerFactory.getLogger(CommonConfigPropertiesTest.class);
 	
-	@Test
+	
 	public void testGetHomepageSliderSerialId() throws InterruptedException {
 		LOG.info("Start test");
 		Thread[] tArr = new Thread[3];

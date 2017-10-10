@@ -27,7 +27,7 @@ public class CmdDetailServiceTest {
 	@Autowired
 	private CmdDetailService c;
 	
-	@Test
+	
 	public void testGetPicturesByCmdId(){
 		log.info("start to test getPicturesByCmdId");
 
@@ -39,7 +39,7 @@ public class CmdDetailServiceTest {
 		list.stream().forEach(sf->System.out.println(sf.toString()));
 	}
 	
-	@Test
+	
 	public void testGetCommodityByCmdId(){
 		log.info("start to test getCommodityByCmdId");
 		
