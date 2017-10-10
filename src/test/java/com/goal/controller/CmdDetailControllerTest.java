@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 public class CmdDetailControllerTest extends GenericControllerTest{
 
-	@Test
+	
 	public void testGetDetailPictures() throws Exception{
 		getMockMvc().perform(get("/detail/display/wpf")).andDo(print()).andExpect(status().is2xxSuccessful())
 		.andExpect(MockMvcResultMatchers.forwardedUrl("/WEB-INF/jsp/index.jsp"));

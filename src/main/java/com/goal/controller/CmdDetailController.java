@@ -22,7 +22,8 @@ public class CmdDetailController extends AbstractController {
 
 	private static final Log logger = LogFactory.getLog(CmdDetailController.class);
 	
-	@Resource CmdDetailControllerHelper helper;
+	@Resource 
+	CmdDetailControllerHelper helper;
 	
 	@ResponseBody
 	@RequestMapping(value="/display/{cmdId}",method=RequestMethod.GET)

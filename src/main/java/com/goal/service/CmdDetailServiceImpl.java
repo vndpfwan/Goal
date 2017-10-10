@@ -2,7 +2,10 @@ package com.goal.service;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.goal.dao.CmdParamDAO;
@@ -14,14 +17,14 @@ import com.goal.form.CmdParamForm;
 import com.goal.form.CmdPicForm;
 import com.goal.po.CmdParam;
 
-@Service
+@Component
 public class CmdDetailServiceImpl implements CmdDetailService{
 
-	@Autowired
+	@Resource
 	PictureDAO pictureDAO;
-	@Autowired
+	@Resource
 	CommodityDAO cmdDAO;
-	@Autowired
+	@Resource
 	CmdParamDAO paramDAO;
 
 
