@@ -19,14 +19,18 @@ public class CmdDetailControllerHelper extends GenericControllerHelper{
 		CmdPicDTO cmdPicDTO = new CmdPicDTO();
 		cmdPicDTO.setCmdId(cmdId);
 		cmdPicDTO.setShowAs(showAs);
-		return cmdDetailService.getPicturesByCmdId(cmdPicDTO);
+		List<CmdPicForm> list = cmdDetailService.getPicturesByCmdId(cmdPicDTO);
+		list.parallelStream().forEach(dForm->dForm.setPicUrl(combinePictureUrl(dForm.getPicUrl())));
+		return list;
 	}
 
 	public List<CmdPicForm> getDescriptonPicturesByCmdId(String cmdId,String showAs){
 		CmdPicDTO cmdPicDTO = new CmdPicDTO();
 		cmdPicDTO.setCmdId(cmdId);
 		cmdPicDTO.setShowAs(showAs);
-		return cmdDetailService.getPicturesByCmdId(cmdPicDTO);
+		List<CmdPicForm> list = cmdDetailService.getPicturesByCmdId(cmdPicDTO);
+		list.parallelStream().forEach(dForm->dForm.setPicUrl(combinePictureUrl(dForm.getPicUrl())));
+		return list;
 	}
 	
 	public CmdDetailForm getCommodityByCmdId(String cmdId){
