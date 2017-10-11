@@ -20,6 +20,7 @@ import com.goal.util.properties.CommonConfigProperties;
  * @author lizhiwei
  *
  */
+@Component("genericHelper")
 public class GenericControllerHelper implements Constant{
 	/**
 	 * get error json String
