@@ -39,6 +39,7 @@ public class SerialsControllerHelper extends GenericControllerHelper{
 		//to_do 从配置文件中取得父系列的id
 		SerialDTO dto = new SerialDTO();
 		dto.setpSerialsId(CommonConfigProperties.getHomepageSliderSerialId());//read slider parent id from config file
+		dto.setShowAs(PICTURE_SHOW_AS_HOMEPAGE_SLIDER);//获得系列首页图片
 		LOG.info("sService:"+sService);
 		List<SerialsForm> list = sService.getSerialsListByParentId(dto);
 		list.parallelStream().forEach(sForm->sForm.setPicURL(combinePictureUrl(sForm.getPicURL())));
