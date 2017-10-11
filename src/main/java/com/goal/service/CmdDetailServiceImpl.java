@@ -47,13 +47,15 @@ public class CmdDetailServiceImpl implements CmdDetailService{
 				form.setSmartType(item.getCmdValue());
 			else if("warranty".equals(item.getCmdKey()))
 				form.setWarranty(item.getCmdValue());
-			else if("size".equals(item.getCmdKey()))
+			//size
+			else if("颜色".equals(item.getCmdKey()))
 				form.setSize(item.getCmdValue());
 			else if("area".equals(item.getCmdKey()))
 				form.setArea(item.getCmdValue());
 			else if("source".equals(item.getCmdKey()))
 				form.setSource(item.getCmdValue());
-			else if("power".equals(item.getCmdKey()))
+			//power
+			else if("功率".equals(item.getCmdKey()))
 				form.setPower(item.getCmdValue());
 			else if("space".equals(item.getCmdKey()))
 				form.setSpace(item.getCmdValue());
