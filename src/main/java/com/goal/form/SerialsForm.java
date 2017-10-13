@@ -18,9 +18,10 @@ public class SerialsForm {
 	private String serialsName;
 	
 	/**
-	 * 系列URL
+	 * 系列URL(2017-10-13根据前台需求更新)
 	 */
-	private String url;
+//	private String url;
+	private String clickURL;
 	
 	
 	/**
@@ -49,13 +50,13 @@ public class SerialsForm {
 	}
 
 
-	public String getUrl() {
-		return url;
+	public String getClickURL() {
+		return clickURL;
 	}
 
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setClickURL(String clickURL) {
+		this.clickURL = clickURL;
 	}
 
 
@@ -70,6 +71,6 @@ public class SerialsForm {
 	
 	@Override
 	public String toString() {
-		return "SerialSliderDTO [serialsId="+serialsId+",serialsName="+serialsName+",url="+url+"+\",picURL=\"+picURL+\"]";
+		return "SerialSliderDTO [serialsId="+serialsId+",serialsName="+serialsName+",url="+clickURL+"+\",picURL=\"+picURL+\"]";
 	}
 }

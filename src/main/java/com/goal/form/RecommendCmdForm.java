@@ -11,55 +11,59 @@ public class RecommendCmdForm {
 	/**
 	 * 商品id
 	 */
-	private String CmdId;
+	private String cmdId;
 	/**
-	 * 商品名称
+	 * 商品名称(2017-10-13根据前台需求更新)
 	 */
-	private String cmdName;
-	/**
-	 * 商品描述
-	 */
-	private String cmdDesc;
-	/**
-	 * 商品价格
-	 */
-	private String cmdPrice;
+//	private String cmdName;
+	private String name;
 	
 	/**
-	 * 商品图片
+	 * 商品描述(2017-10-13根据前台需求更新)
 	 */
-	private String picUrl;
+//	private String cmdDesc;
+	private String desc;
+	/**
+	 * 商品价格(2017-10-13根据前台需求更新)
+	 */
+//	private String cmdPrice;
+	private String price;
+	
+	/**
+	 * 商品图片(2017-10-13根据前台需求更新)
+	 */
+	private String picURL;
 	
 	public String getCmdId() {
-		return CmdId;
+		return cmdId;
 	}
 	public void setCmdId(String cmdId) {
-		CmdId = cmdId;
+		this.cmdId = cmdId;
 	}
-	public String getCmdName() {
-		return cmdName;
+	public String getName() {
+		return name;
 	}
-	public void setCmdName(String cmdName) {
-		this.cmdName = cmdName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getCmdDesc() {
-		return cmdDesc;
+	public String getDesc() {
+		return desc;
 	}
-	public void setCmdDesc(String cmdDesc) {
-		this.cmdDesc = cmdDesc;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
-	public String getCmdPrice() {
-		return cmdPrice;
+	public String getPrice() {
+		return price;
 	}
-	public void setCmdPrice(String cmdPrice) {
-		this.cmdPrice = cmdPrice;
+	public void setPrice(String price) {
+		this.price = price;
 	}
-	
-	public String getPicUrl() {
-		return picUrl;
+
+	public String getPicURL() {
+		return picURL;
 	}
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
+	public void setPicURL(String picURL) {
+		this.picURL = picURL;
 	}
 	@Override
 	public String toString() {
