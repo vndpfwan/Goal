@@ -5,9 +5,9 @@
 	<!--McGee add for select commodity basic info-->
   <resultMap id="CommodityResultMap" type="com.goal.form.CmdDetailForm">
     <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />
-    <result column="cmd_desc" jdbcType="VARCHAR" property="cmdDesc" />
-    <result column="cmd_price" jdbcType="VARCHAR" property="cmdPrice" />
+    <result column="cmd_name" jdbcType="VARCHAR" property="name" />
+    <result column="cmd_desc" jdbcType="VARCHAR" property="desc" />
+    <result column="cmd_price" jdbcType="VARCHAR" property="price" />
     <result column="type_name" jdbcType="VARCHAR" property="typeName" />
     <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
   </resultMap>

@@ -5,6 +5,7 @@ import java.util.List;
 import com.goal.dto.CmdPicDTO;
 import com.goal.form.CmdDetailForm;
 import com.goal.form.CmdParamForm;
+import com.goal.form.CmdParamsForm;
 import com.goal.form.CmdPicForm;
 
 public interface CmdDetailService {
@@ -13,5 +14,5 @@ public interface CmdDetailService {
 	
 	CmdDetailForm getCommodityByCmdId(String cmdId);
 	
-	CmdParamForm getCmdParamsByCmdId(String cmdId);
+	List<CmdParamsForm> getCmdParamsByCmdId(String cmdId);
 }

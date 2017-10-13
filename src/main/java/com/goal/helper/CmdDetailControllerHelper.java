@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.goal.dto.CmdPicDTO;
 import com.goal.form.CmdDetailForm;
 import com.goal.form.CmdParamForm;
+import com.goal.form.CmdParamsForm;
 import com.goal.form.CmdPicForm;
 import com.goal.service.CmdDetailService;
 
@@ -27,7 +28,7 @@ public class CmdDetailControllerHelper extends GenericControllerHelper{
 		cmdPicDTO.setCmdId(cmdId);
 		cmdPicDTO.setShowAs(showAs);
 		List<CmdPicForm> list = cmdDetailService.getPicturesByCmdId(cmdPicDTO);
-		list.parallelStream().forEach(dForm->dForm.setPicUrl(combinePictureUrl(dForm.getPicUrl())));
+		list.parallelStream().forEach(dForm->dForm.setPicURL(combinePictureUrl(dForm.getPicURL())));
 		return list;
 	}
 
@@ -40,7 +41,7 @@ public class CmdDetailControllerHelper extends GenericControllerHelper{
 		cmdPicDTO.setCmdId(cmdId);
 		cmdPicDTO.setShowAs(showAs);
 		List<CmdPicForm> list = cmdDetailService.getPicturesByCmdId(cmdPicDTO);
-		list.parallelStream().forEach(dForm->dForm.setPicUrl(combinePictureUrl(dForm.getPicUrl())));
+		list.parallelStream().forEach(dForm->dForm.setPicURL(combinePictureUrl(dForm.getPicURL())));
 		return list;
 	}
 	
@@ -56,7 +57,7 @@ public class CmdDetailControllerHelper extends GenericControllerHelper{
 	 * 通过商品id获取商品参数
 	 * @return
 	 */
-	public CmdParamForm getCmdParamsByCmdId(String cmdId){
+	public List<CmdParamsForm> getCmdParamsByCmdId(String cmdId){
 		return cmdDetailService.getCmdParamsByCmdId(cmdId);
 	}
 }

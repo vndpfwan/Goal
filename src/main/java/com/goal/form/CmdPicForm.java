@@ -3,7 +3,7 @@ package com.goal.form;
 public class CmdPicForm {
 
 	private String id;
-	private String picUrl;
+	private String picURL;
 	private String picIndex;
 	public String getId() {
 		return id;
@@ -11,11 +11,11 @@ public class CmdPicForm {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getPicUrl() {
-		return picUrl;
+	public String getPicURL() {
+		return picURL;
 	}
-	public void setPicUrl(String picUrl) {
-		this.picUrl = picUrl;
+	public void setPicURL(String picURL) {
+		this.picURL = picURL;
 	}
 	public String getPicIndex() {
 		return picIndex;
@@ -25,7 +25,7 @@ public class CmdPicForm {
 	}
 	@Override
 	public String toString() {
-		return "CmdPicForm [id=" + id + ", picUrl=" + picUrl + ", picIndex=" + picIndex + "]";
+		return "CmdPicForm [id=" + id + ", picURL=" + picURL + ", picIndex=" + picIndex + "]";
 	}
 	
 }
