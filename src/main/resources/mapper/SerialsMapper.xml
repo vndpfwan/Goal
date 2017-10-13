@@ -167,7 +167,7 @@
   <resultMap id="SliderResultMap" type="com.goal.form.SerialsForm">
     <result column="id" jdbcType="VARCHAR" property="serialsId" />
     <result column="serial_name" jdbcType="VARCHAR" property="serialsName" />
-    <result column="serial_url" jdbcType="VARCHAR" property="url" />
+    <result column="serial_url" jdbcType="VARCHAR" property="clickURL" />
     <result column="pic_url" jdbcType="VARCHAR" property="picURL" />
   </resultMap>
   <select id="getSerialsListBySerialDTO" parameterType="com.goal.dto.SerialDTO" resultMap="SliderResultMap">
@@ -188,11 +188,11 @@
   </select>
   
   <resultMap id="RecommendCmdResultMap" type="com.goal.form.RecommendCmdForm">
-    <result column="cmd_id" jdbcType="VARCHAR" property="CmdId" />
-    <result column="cmd_name" jdbcType="VARCHAR" property="cmdName" />
-    <result column="cmd_desc" jdbcType="VARCHAR" property="cmdDesc" />
-    <result column="cmd_price" jdbcType="VARCHAR" property="cmdPrice" />
-    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="cmd_id" jdbcType="VARCHAR" property="cmdId" />
+    <result column="cmd_name" jdbcType="VARCHAR" property="name" />
+    <result column="cmd_desc" jdbcType="VARCHAR" property="desc" />
+    <result column="cmd_price" jdbcType="VARCHAR" property="price" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picURL" />
   </resultMap>
   <select id="getRecommendCmdBySerialDTO" parameterType="com.goal.dto.SerialDTO" resultMap="RecommendCmdResultMap">
   select c.id cmd_id,c.cmd_name,c.cmd_desc,c.cmd_price,e.pic_url from shop.t_serials a left join 

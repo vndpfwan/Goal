@@ -56,7 +56,7 @@ public class SerialsControllerHelper extends GenericControllerHelper{
 		dto.setSerialsId(CommonConfigProperties.getHomepageRecommendSerialId());
 		dto.setShowAs(PICTURE_SHOW_AS_FIRST_CHOICE);//从图片表中取得show_as为3的图片
 		List<RecommendCmdForm> list = sService.getRecommendCmdBySerialsId(dto);
-		list.parallelStream().forEach(rForm->rForm.setPicUrl(combinePictureUrl(rForm.getPicUrl())));
+		list.parallelStream().forEach(rForm->rForm.setPicURL(combinePictureUrl(rForm.getPicURL())));
 		return list;
 	}
 
