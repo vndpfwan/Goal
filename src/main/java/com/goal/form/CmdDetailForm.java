@@ -4,34 +4,42 @@ package com.goal.form;
 public class CmdDetailForm {
 
 	private String id;
-	private String cmdName;
-	private String cmdDesc;
-	private String cmdPrice;
+	private String name;
+	private String desc;
+	private String price;
+	private String originPrice;
 	private String brandName;
 	private String typeName;
+
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getCmdName() {
-		return cmdName;
+	public String getName() {
+		return name;
 	}
-	public void setCmdName(String cmdName) {
-		this.cmdName = cmdName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getCmdDesc() {
-		return cmdDesc;
+	public String getDesc() {
+		return desc;
 	}
-	public void setCmdDesc(String cmdDesc) {
-		this.cmdDesc = cmdDesc;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
-	public String getCmdPrice() {
-		return cmdPrice;
+	public String getPrice() {
+		return price;
 	}
-	public void setCmdPrice(String cmdPrice) {
-		this.cmdPrice = cmdPrice;
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getOriginPrice() {
+		return originPrice;
+	}
+	public void setOriginPrice(String originPrice) {
+		this.originPrice = originPrice;
 	}
 	public String getBrandName() {
 		return brandName;
@@ -45,10 +53,10 @@ public class CmdDetailForm {
 	public void setTypeName(String typeName) {
 		this.typeName = typeName;
 	}
+
 	@Override
 	public String toString() {
-		return "CmdDetailForm [id=" + id + ", cmdName=" + cmdName + ", cmdDesc=" + cmdDesc + ", cmdPrice=" + cmdPrice
-				+ ", brandName=" + brandName + ", typeName=" + typeName + "]";
+		return "CmdDetailForm [id=" + id + ", name=" + name + ", desc=" + desc + ", price=" + price + ", originPrice="
+				+ originPrice + ", brandName=" + brandName + ", typeName=" + typeName + "]";
 	}
-	
 }

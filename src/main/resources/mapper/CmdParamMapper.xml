@@ -3,18 +3,14 @@
 <mapper namespace="com.goal.dao.CmdParamDAO">
 	
   <!--McGee add for select params -->
-  <resultMap id="ParamResultMap" type="com.goal.po.CmdParam">
-    <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="cmd_key" jdbcType="VARCHAR" property="cmdKey" />
-    <result column="cmd_value" jdbcType="VARCHAR" property="cmdValue" />
-    <result column="create_tsp" jdbcType="TIMESTAMP" property="createTsp" />
-    <result column="change_tsp" jdbcType="TIMESTAMP" property="changeTsp" />
-    <result column="t_Commodity_id" jdbcType="VARCHAR" property="tCommodityId" />
+  <resultMap id="ParamResultMap" type="com.goal.form.CmdParamsForm">
+    <result column="cmd_key" jdbcType="VARCHAR" property="attrTitle" />
+    <result column="cmd_value" jdbcType="VARCHAR" property="attrInfo" />
   </resultMap>
-  <select id="getCmdParamsByCmdId" parameterType="String" resultMap="ParamResultMap">
-    select *
-	from shop.t_cmdParam
-    where t_Commodity_id=#{record}
+  <select id="getCmdParamsByCmdId" parameterType="string" resultMap="ParamResultMap">
+    select param.cmd_key,param.cmd_value
+	from shop.t_cmdparam param
+	where param.t_Commodity_id=#{record}
   </select>
 	
   <resultMap id="BaseResultMap" type="com.goal.po.CmdParam">

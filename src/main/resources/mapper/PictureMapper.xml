@@ -14,7 +14,7 @@
   <!--McGee add for Commodity detail display pictures-->
   <resultMap id="PicturesResultMap" type="com.goal.form.CmdPicForm">
     <result column="id" jdbcType="VARCHAR" property="id" />
-    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picURL" />
     <result column="pic_index" jdbcType="VARCHAR" property="picIndex" />
   </resultMap>
   
