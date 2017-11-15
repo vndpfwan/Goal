@@ -14,6 +14,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.goal.dto.CodeDTO;
@@ -36,8 +37,8 @@ public class PaymentController extends AbstractController{
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value="/payment",method=RequestMethod.GET)
-	public Object processPayment(String code,String status){
+	@RequestMapping(value="/wxpay",method=RequestMethod.GET)
+	public Object processPayment(@RequestParam("code") String code,@RequestParam("status") String status){
 		PrepayForm prepayForm = null;
 		Map<String, String> result = null;
 		
