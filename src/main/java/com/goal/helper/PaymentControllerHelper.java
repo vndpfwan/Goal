@@ -24,7 +24,7 @@ import com.goal.wxpay.WXPayPerformance;
 import net.sf.json.JSONObject;
 
 @Component("paymentHelper")
-public class PaymentControllerHelper {
+public class PaymentControllerHelper extends GenericControllerHelper{
 
 	private static final Log logger = LogFactory.getLog(PaymentControllerHelper.class);
 	
@@ -52,6 +52,8 @@ public class PaymentControllerHelper {
 		StringBuffer realURL = new StringBuffer();
 		realURL.append(RAW_URL).append("?appid=").append(APPID).append("&secret=").append(SECRET)
 				.append("&code=").append(codeDTO.getCode()).append("&grant_type=").append(GRANT_TYPE);
+		
+		logger.debug("request url:" + realURL);
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		
