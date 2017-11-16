@@ -32,7 +32,7 @@ public class WXPayPerformance {
         data.put("device_info", "WEB");
         data.put("fee_type", "CNY");
         data.put("total_fee", "1");
-        data.put("spbill_create_ip", "123.12.12.123");
+        data.put("spbill_create_ip", "59.110.240.8");
         data.put("notify_url", "http://www.makeiteasy.xin/wxpay/notify");
         data.put("trade_type", "JSAPI");
         data.put("product_id", "12");

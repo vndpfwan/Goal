@@ -38,13 +38,13 @@ public class PaymentController extends AbstractController{
 	 */
 	@ResponseBody
 	@RequestMapping(value="/wxpay",method=RequestMethod.GET)
-	public Object processPayment(@RequestParam("code") String code,@RequestParam("status") String status){
+	public Object processPayment(@RequestParam("code") String code,@RequestParam("state") String state){
 		PrepayForm prepayForm = null;
 		Map<String, String> result = null;
 		
 		CodeDTO dto = new CodeDTO();
 		dto.setCode(code);
-		dto.setStatus(status);
+		dto.setState(state);;
 		
 		OAuth oAuth = null;
 		
@@ -52,6 +52,7 @@ public class PaymentController extends AbstractController{
 			oAuth = helper.generateOpenid(dto);
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("get oauth failed!");
 		}
 		
 		if (oAuth == null) {

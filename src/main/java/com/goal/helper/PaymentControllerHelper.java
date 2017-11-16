@@ -46,7 +46,7 @@ public class PaymentControllerHelper extends GenericControllerHelper{
 		String jsonStr = null;
 		
 		if("".equals(codeDTO.getCode()));
-		if("".equals(codeDTO.getStatus()));
+		if("".equals(codeDTO.getState()));
 		
 		
 		StringBuffer realURL = new StringBuffer();
